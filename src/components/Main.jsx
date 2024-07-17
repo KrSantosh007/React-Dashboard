@@ -3,6 +3,8 @@ import React from 'react';
 
 import PieComponent from './PieComponent';
 import LineComponent from './LineComponent';
+import ProgressBar from './ProgressBar';
+import err from '../assets/error.png';
 
 
 
@@ -68,7 +70,25 @@ const Main = () => {
                         <PieComponent/>
                     </div>
                 </div>
-            </div>            
+            </div> 
+
+            <div className='flex mt-[22px] w-full gap-[30px]'>
+                <div className='basis-[55%] border bg-[#fff] shadow-md cursor-pointer rounded-[4px]'>                    
+                    <ProgressBar />
+                </div>
+                <div className='basis-[45%] border bg-[#fff] shadow-md cursor-pointer rounded-[4px]'>
+                    <div className='bg-[#F8F9FC] flex items-center justify-between py-[15px] px-[20px] border-b-[1px] border-[#EDEDED]'>
+                        <h2 className='text-[#4e73df] text-[16px] leading-[19px] font-bold'>Resources</h2>
+                        <FaEllipsisV color='gray' className='cursor-pointer' />
+                    </div>
+                    <div className='pl-[35px] flex items-center justify-center h-[100%]'>
+                        <div>
+                            <img src={err} alt='error' height={200} width={200} />
+                            <p className='mt-[15px] font-semibold text-gray-500'>No data available</p>
+                        </div>
+                    </div>
+                </div>
+            </div>           
         </div>
     )
 }
